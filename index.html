@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voting Machine | Owais Zakir</title>
-</head>
-<body>
-    <h1>On Working</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Voting Machine | Owais Zakir</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="voting-machine">
+      <h1 class="main-heading">Friends Voting System</h1>
+      <div class="voting-box">
+        <input
+          type="text"
+          class="input"
+          required=""
+          id="participant"
+          placeholder="Enter Participant Name"
+        />
+        <button id="addParticipant" class="button">Add Friends</button>
+      </div>
+      <div class="voting-person-list">
+        <table>
+          <tr>
+            <th>Serial No.</th>
+            <th>Participant Name</th>
+            <th>Vote Count</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
 </html>
