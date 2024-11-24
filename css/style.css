@@ -11,21 +11,12 @@
   --box-shadow: 4px 4px 8px var(--shadow-color),
     -4px -4px 8px var(--highlight-color);
 }
-/*
- * Project Name - Description
- * Author: Your Name
- * Date: YYYY-MM-DD
- */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
 }
 
 html,
@@ -35,27 +26,45 @@ body {
   overflow: hidden;
   font-family: "Roboto", sans-serif;
 }
+
 ul {
   list-style-type: none;
 }
+
 body {
-  background: #e8e8e8;
+  background: var(--secondary-color);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+#reload {
+  all: unset;
+  position: absolute;
+  bottom: 5rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  box-shadow: var(--normal-shadow);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+#reload:active {
+  box-shadow: var(--active-shadow);
+}
 .voting-machine {
   width: 29rem;
   padding: 2rem;
   box-shadow: var(--box-shadow);
   border: 2px solid #00908646;
   border-radius: 20px 10%;
-  -webkit-border-radius: 20px 10%;
-  -moz-border-radius: 20px 10%;
-  -ms-border-radius: 20px 10%;
-  -o-border-radius: 20px 10%;
 }
+
 .main-heading {
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -66,13 +75,13 @@ body {
   padding-bottom: 1rem;
   border-bottom: 2px solid black;
 }
+
 .voting-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* =======   */
 .input {
   font-size: 1rem;
   line-height: 28px;
@@ -86,7 +95,7 @@ body {
 }
 
 .input:focus,
-input:hover {
+.input:hover {
   outline: none;
   padding: 0.2rem 1rem;
   border-radius: 1rem;
@@ -102,173 +111,31 @@ input:hover {
   transition: opacity 0.3s;
 }
 
-/* ==================== Add Friend Button ================ */
 .button {
   all: unset;
   margin-top: 5px;
   padding: 0.3rem 0.9rem;
-  font-family: "poppins";
+  font-family: "Poppins", sans-serif;
   color: var(--primary-color);
   box-shadow: var(--box-shadow);
   cursor: pointer;
   border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
 }
+
 .button:hover {
   box-shadow: var(--normal-shadow);
   color: var(--accent-color);
 }
+
 .button:active {
   box-shadow: var(--active-shadow);
 }
-/* =================== Voting List =================== */
-.voting-person-list {
-  margin-top: 1.5rem;
-  text-align: center;
-}
-.voting-person-list > h1 {
-  margin-bottom: 1.2rem;
-  font-size: 1.4rem;
-  font-family: "poppins";
-  color: var(--accent-color);
-  text-shadow: -2px 1px 10px var(--shadow-color);
-}
-.voting-person-list > ul > li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-}
-:root {
-  --primary-color: #009087;
-  --secondary-color: #e8e8e8;
-  --accent-color: #090909;
-  --highlight-color: #ffffff;
-  --shadow-color: #c5c5c5;
-  --normal-shadow: 6px 6px 12px var(--shadow-color),
-    -6px -6px 12px var(--highlight-color);
-  --active-shadow: inset 4px 4px 12px var(--shadow-color),
-    inset -4px -4px 12px var(--highlight-color);
-  --box-shadow: 4px 4px 8px var(--shadow-color),
-    -4px -4px 8px var(--highlight-color);
-}
-/*
- * Project Name - Description
- * Author: Your Name
- * Date: YYYY-MM-DD
- */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-html,
-body {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  font-family: "Roboto", sans-serif;
-}
-ul {
-  list-style-type: none;
-}
-body {
-  background: #e8e8e8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.voting-machine {
-  width: 29rem;
-  padding: 2rem;
-  box-shadow: var(--box-shadow);
-  border: 2px solid #00908646;
-  border-radius: 20px 10%;
-  -webkit-border-radius: 20px 10%;
-  -moz-border-radius: 20px 10%;
-  -ms-border-radius: 20px 10%;
-  -o-border-radius: 20px 10%;
-}
-.main-heading {
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 750;
-  color: var(--primary-color);
-  text-shadow: 4px 4px 8px var(--shadow-color);
-  margin-bottom: 0.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid black;
-}
-.voting-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* =======   */
-.input {
-  font-size: 1rem;
-  line-height: 28px;
-  border: 2px solid transparent;
-  border-bottom-color: #777;
-  padding: 0.2rem 0;
+.button:focus {
   outline: none;
-  background-color: transparent;
-  color: #0d0c22;
-  transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  box-shadow: 0 0 5px 2px var(--primary-color);
 }
 
-.input:focus,
-input:hover {
-  outline: none;
-  padding: 0.2rem 1rem;
-  border-radius: 1rem;
-  border-color: #7a9cc6;
-}
-
-.input::placeholder {
-  color: #777;
-}
-
-.input:focus::placeholder {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-/* ==================== Add Friend Button ================ */
-.button {
-  all: unset;
-  margin-top: 5px;
-  padding: 0.3rem 0.9rem;
-  font-family: "poppins";
-  color: var(--primary-color);
-  box-shadow: var(--box-shadow);
-  cursor: pointer;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-}
-.button:hover {
-  box-shadow: var(--normal-shadow);
-  color: var(--accent-color);
-}
-.button:active {
-  box-shadow: var(--active-shadow);
-}
-/* =================== Voting List =================== */
 .voting-person-list {
   margin-top: 1.5rem;
 }
@@ -276,28 +143,34 @@ input:hover {
 .voting-person-list table {
   width: 100%;
 }
+
 .voting-person-list tr {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .voting-person-list tr > th {
   margin-bottom: 1.2rem;
   font-size: 1.1rem;
-  font-family: "poppins";
+  font-family: "Poppins", sans-serif;
   color: var(--accent-color);
   text-shadow: -2px 1px 10px var(--shadow-color);
 }
+
 .voting-person-list tr > td {
   font-size: 1.1rem;
   font-family: "Roboto";
   color: var(--accent-color);
   text-shadow: -2px 1px 10px var(--shadow-color);
+  margin-bottom: 1rem;
 }
+
 .voting-person-list tr > td:first-child {
   margin-left: 2rem;
 }
+
 .voting-person-list tr > td:last-child {
   margin-right: 2rem;
 }
@@ -306,34 +179,72 @@ input:hover {
   all: unset;
   cursor: pointer;
   font-size: 1.3rem;
-  font-family: "poppins", "Roboto";
+  font-family: "Poppins", "Roboto";
   border-radius: 20px;
   padding: 0.2rem 0.8rem;
   transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
 }
+
 #rowBtn:hover {
   scale: 1.1;
   box-shadow: var(--box-shadow);
 }
+
 #rowBtn:active {
   scale: 1;
   box-shadow: var(--normal-shadow);
 }
-#rowNumber {
-  padding: .5rem;
+
+.rowNumber {
+  padding: 0.5rem;
   box-shadow: var(--normal-shadow);
   color: var(--primary-color);
   border-radius: 30%;
-  -webkit-border-radius: 30%;
-  -moz-border-radius: 30%;
-  -ms-border-radius: 30%;
-  -o-border-radius: 30%;
+}
+
+@media (max-width: 768px) {
+  .voting-machine {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .main-heading {
+    font-size: 1.5rem;
+  }
+
+  .voting-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input {
+    font-size: 1.1rem;
+  }
+
+  .button {
+    padding: 0.3rem 0.7rem;
+  }
+
+  .voting-person-list tr {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .voting-person-list tr > td:first-child,
+  .voting-person-list tr > td:last-child {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .voting-person-list tr > th,
+  .voting-person-list tr > td {
+    font-size: 1rem;
+  }
+}
+
+/* ===================== */
+@media (max-width: 1170px) {
+  #reload {
+    display: none;
+  }
 }

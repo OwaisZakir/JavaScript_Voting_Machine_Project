@@ -2,24 +2,33 @@ let participants = [
   {
     ID: 1,
     name: "Owais Zakir",
-    vote: 0,
+    vote: 9,
   },
 ];
+
 let first = document.querySelector("table");
 participants.forEach((item) => {
   first.innerHTML += `
-    <tr id = "row">
-        <td><span id = "rowNumber">${item.ID}</span></td>
-        <td><button id = "rowBtn">${item.name}</button></td>
-        <td><span id = "rowNumber">${item.vote}</span></td>
-    </tr>
-`;
+      <tr id="row">
+          <td><span class="rowNumber">${item.ID}</span></td>
+          <td><button id="rowBtn" title = "Click Me To Increase Vote" >${item.name}</button></td>
+          <td><span id="voteNumber" class="rowNumber">${item.vote}</span></td>
+      </tr>
+    `;
+});
+
+let rowButtons = document.querySelectorAll("#rowBtn");
+rowButtons.forEach((btn, index) => {
+  btn.addEventListener("click", (event) => {
+    participants[index].vote += 1;
+
+    let voteNumbers = document.querySelectorAll("#voteNumber");
+    voteNumbers[index].textContent = participants[index].vote;
+  });
 });
 
 let addBtn = document.querySelector("#addParticipant");
-
 addBtn.addEventListener("click", () => {
-  let table = document.querySelector("table");
   let userValue = document.querySelector("#participant").value;
   if (userValue) {
     participants.push({
@@ -28,24 +37,31 @@ addBtn.addEventListener("click", () => {
       vote: 0,
     });
 
-    table.innerHTML += `
-        <tr id = "row">
-          <td>${participants.length}</td>
-          <td><button id = "rowBtn">${userValue}</button></td>
-          <td>0</td>
+    first.innerHTML += `
+        <tr id="row">
+          <td><span class="rowNumber">${participants.length}</span></td>
+          <td><button id="rowBtn">${userValue}</button></td>
+          <td><span id="voteNumber" class="rowNumber">0</span></td>
         </tr>
       `;
 
     document.querySelector("#participant").value = "";
 
-    let row = document.querySelectorAll("#rowBtn");
-    row.forEach((btn) => {
+    let rowButtons = document.querySelectorAll("#rowBtn");
+    rowButtons.forEach((btn, index) => {
       btn.addEventListener("click", () => {
-        console.log(btn);
+        participants[index].vote += 1;
+
+        let voteNumbers = document.querySelectorAll("#voteNumber");
+        voteNumbers[index].textContent = participants[index].vote;
       });
     });
-    console.log("ok");
   } else {
     alert("Please enter a participant's name.");
   }
 });
+let reloadBtn = document.querySelector("#reload")
+
+reloadBtn.addEventListener("click",()=>{
+  window.location.reload();
+})
